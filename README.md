@@ -1,4 +1,3 @@
-# guiabolso-backend
-Back-end Engineer no Guiabolso.
+# Back-end Engineer no Guiabolso.
 
-API de transações com Java 11, Spring Boot, Gradle e Docker.
+### Para o projeto guiabolso-backend deve ser feito uma API de transações com Java 11, Spring Boot, Gradle e Docker.

@@ -20,27 +20,32 @@ public class Transacao implements Serializable {
 
     private String descricao;
 
-    private Long data;
+    private int dia;
+
+    private int mes;
+
+    private int ano;
 
     private Integer valor;
 
     private Boolean duplicated;
 
-    private Integer usuarioId;
+    private Integer idUsuario;
 
     public Transacao() {
         super();
     }
 
-    public Transacao(Long id, String descricao, Long data, Integer valor, Boolean duplicated,
-            Integer usuarioId) {
+    public Transacao(String descricao, int dia, int mes, int ano, Integer valor, Boolean duplicated,
+            Integer idUsuario) {
         super();
-        this.id = id;
         this.descricao = descricao;
-        this.data = data;
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
         this.valor = valor;
         this.duplicated = duplicated;
-        this.usuarioId = usuarioId;
+        this.idUsuario = idUsuario;
     }
 
     public Long getId() {
@@ -59,14 +64,6 @@ public class Transacao implements Serializable {
         this.descricao = descricao;
     }
 
-    public Long getData() {
-        return data;
-    }
-
-    public void setData(Long data) {
-        this.data = data;
-    }
-
     public Integer getValor() {
         return valor;
     }
@@ -83,12 +80,36 @@ public class Transacao implements Serializable {
         this.duplicated = duplicated;
     }
 
-    public Integer getUsuarioId() {
-        return usuarioId;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuarioId(Integer usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     @Override

@@ -1,8 +1,10 @@
 package br.com.guiabolsobackend.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import br.com.guiabolsobackend.entities.Transacao;
+import br.com.guiabolsobackend.utils.DateTimeUtil;
 
 public class TransacaoDTO implements Serializable {
 
@@ -16,6 +18,8 @@ public class TransacaoDTO implements Serializable {
 
     private Boolean duplicated;
 
+    private Date dataInformada;
+
     public TransacaoDTO() {
         super();
     }
@@ -23,9 +27,11 @@ public class TransacaoDTO implements Serializable {
     public TransacaoDTO(Transacao entity) {
         super();
         this.descricao = entity.getDescricao();
-        this.data = entity.getData();
+        this.data =
+                DateTimeUtil.setDate(entity.getDia(), entity.getMes(), entity.getAno()).getTime();
         this.valor = entity.getValor();
         this.duplicated = entity.getDuplicated();
+        this.dataInformada = new Date(data);
     }
 
     public String getDescricao() {
@@ -58,6 +64,10 @@ public class TransacaoDTO implements Serializable {
 
     public void setDuplicated(Boolean duplicated) {
         this.duplicated = duplicated;
+    }
+
+    public Date getDataInformada() {
+        return dataInformada;
     }
 
 }
